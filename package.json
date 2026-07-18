@@ -1,9 +1,13 @@
 {
-  "name": "farmacia-panda",
+  "name": "farmacia-panda-api",
   "version": "1.0.0",
   "private": true,
+  "main": "servidor.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node servidor.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "cors": "^2.8.5",

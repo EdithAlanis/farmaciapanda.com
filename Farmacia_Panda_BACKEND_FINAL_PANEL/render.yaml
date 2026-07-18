@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: farmacia-panda-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ADMIN_PIN
+        value: "2222"
+      - key: DATA_DIR
+        value: /var/data
+      - key: ORDER_EMAILS
+        value: prosecogdl@gmail.com,elsyalaniz26@gmail.com
+    disk:
+      name: farmacia-panda-datos
+      mountPath: /var/data
+      sizeGB: 1

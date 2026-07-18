@@ -1,5 +1,1 @@
-window.FARMACIA_PANDA_CONFIG = {
-  apiUrl: "https://TU-SERVIDOR-PANDA.onrender.com/api/orders",
-  whatsapp: "523316012605",
-  email: "elsyalaniz26@gmail.com"
-};
+window.PANDA_CONFIG={API_URL:"https://farmacia-panda-api.onrender.com",WHATSAPP:"523316012605"};

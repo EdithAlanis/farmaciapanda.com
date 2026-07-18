@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: farmacia-panda-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ADMIN_PIN
+        value: "2222"
+      - key: ORDER_EMAILS
+        value: "elsyalaniz26@gmail.com,prosecogdl@gmail.com"
+      - key: RESEND_API_KEY
+        sync: false
+      - key: FROM_EMAIL
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_WHATSAPP_TO
+        sync: false
+      - key: TWILIO_WHATSAPP_FROM
+        sync: false

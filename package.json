@@ -1,0 +1,14 @@
+{
+  "name": "farmacia-panda",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "resend": "^4.1.2",
+    "twilio": "^5.4.4"
+  }
+}

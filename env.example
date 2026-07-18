@@ -1,7 +1,0 @@
-const express=require('express');const cors=require('cors');const axios=require('axios');
-const app=express();app.use(cors());app.use(express.json({limit:'1mb'}));
-app.get('/',(_,res)=>res.json({ok:true,servicio:'Farmacia Panda'}));
-app.post('/api/pedidos',async(req,res)=>{try{const p=req.body||{};const folio='FP-'+Date.now().toString().slice(-8);const c=p.cliente||{};const lineas=(p.productos||[]).map(x=>`${x.cantidad} x ${x.nombre} - $${Number(x.precio||0).toFixed(2)}`).join('\n');const texto=`NUEVO PEDIDO ${folio}\n\nCliente: ${c.nombre||''}\nTeléfono: ${c.telefono||''}\nDomicilio: ${c.domicilio||''}, ${c.colonia||''}, ${c.ciudad||''}, ${c.estado||''}\nHorario: ${c.horario||''}\nObservaciones: ${c.observaciones||''}\n\nProductos:\n${lineas}\n\nTotal estimado: $${Number(p.totalEstimado||0).toFixed(2)}`;
-if(process.env.WHATSAPP_TOKEN&&process.env.WHATSAPP_PHONE_NUMBER_ID&&process.env.ADMIN_WHATAPP){await axios.post(`https://graph.facebook.com/v21.0/${process.env.WHATSAPP_PHONE_NUMBER_ID}/messages`,{messaging_product:'whatsapp',to:process.env.ADMIN_WHATAPP,type:'text',text:{body:texto}},{headers:{Authorization:`Bearer ${process.env.WHATSAPP_TOKEN}`,'Content-Type':'application/json'}})}
-res.json({ok:true,folio});}catch(e){console.error(e.response?.data||e.message);res.status(500).json({ok:false,error:'No se pudo registrar el pedido'});}});
-const port=process.env.PORT||3000;app.listen(port,()=>console.log('Farmacia Panda en puerto '+port));

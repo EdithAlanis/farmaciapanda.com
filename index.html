@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <div class="canon"><span>💳 Pago al recibir</span><span>🚚 Servicio a domicilio</span><span>📞 33 1601 2605</span></div>
+  <div class="canon"><span>💳 Pago al recibir</span><span>🚚 Servicio a domicilio</span><span>💬 Atención por WhatsApp</span></div>
   <header>
     <a class="marca" href="#inicio">
       <img src="activos/logo-farmacia-panda.svg" alt="Farmacia Panda">
@@ -25,7 +25,7 @@
       <p>Mismos productos y precios de El Bambino Daniel, más promociones y servicios exclusivos de Farmacia Panda.</p>
       <div class="comportamiento"><a class="primario" href="#productos">Ver catálogo</a><a class="secundario" href="https://wa.me/523316012605" target="_blank">Agendar por WhatsApp</a></div>
       <div class="confianza"><span>✓ Productos de calidad</span><span>✓ Precios estimados</span><span>✓ Atención médica</span></div></div>
-      <div class="tarjeta-heroe"><img src="activos/logo-farmacia-panda.svg" alt="Logo Farmacia Panda"><strong>Dra. Elsy Alaniz</strong><span>WhatsApp 33 1601 2605</span></div>
+      <div class="tarjeta-heroe"><img src="activos/logo-farmacia-panda.svg" alt="Logo Farmacia Panda"><strong>Dra. Elsy Alaniz</strong><span>Pedidos y citas por WhatsApp</span></div>
     </section>
     <section id="promociones"><div class="cabezal-seccion"><div><span>Promociones especiales</span><h2>Servicios y pruebas</h2></div></div>
       <div class="red-promocional">
@@ -40,9 +40,46 @@
     <section id="servicios"><div class="cabezal-seccion"><div><span>Atención integral</span><h2>Servicios médicos</h2></div></div>
       <div class="red-servicio"><article>👩‍⚕️<h3>Consulta médica</h3><p>Atención profesional por la Dra. Elsy Alaniz.</p></article><article>🏠<h3>Consulta a domicilio</h3><p>Comodidad y seguridad sin salir de casa.</p></article><article>🧪<h3>Pruebas rápidas</h3><p>Dengue, influenza, COVID y más.</p></article><article>✨<h3>Medicina estética</h3><p>Botox, carboxiterapia, faciales y valoración.</p></article></div>
     </section>
-    <section id="productos"><div class="cabezal-seccion"><div><span>Catálogo completo</span><h2>Medicamentos y productos</h2></div><select id="category"><option value="Todos">Todas las categorías</option></select></div><div id="productGrid" class="cuadricula-productos"></div></section>
+    <section id="productos">
+  <div class="cabezal-seccion">
+    <div><span>Catálogo completo</span><h2>Productos separados por categoría</h2></div>
+  </div>
+  <div class="catalog-controls">
+    <input id="searchCatalog" type="search" placeholder="Buscar en todo el catálogo...">
+  </div>
+
+  <div class="catalog-section" data-section="Medicamento básico">
+    <div class="catalog-title"><h3>Medicamentos básicos</h3><span>Listado compacto</span></div>
+    <div id="basicList" class="product-list"></div>
+  </div>
+
+  <div class="catalog-section special-section" data-section="Medicamento especial">
+    <div class="catalog-title"><h3>Medicamentos especiales</h3><span>Requieren receta médica</span></div>
+    <div id="specialList" class="product-list"></div>
+  </div>
+
+  <div class="catalog-section" data-section="Oxímetros">
+    <div class="catalog-title"><h3>Oxímetros</h3><span>Equipos de monitoreo</span></div>
+    <div id="oximeterList" class="product-list"></div>
+  </div>
+
+  <div class="catalog-section" data-section="Pruebas rápidas">
+    <div class="catalog-title"><h3>Pruebas rápidas</h3><span>Productos separados de los medicamentos</span></div>
+    <div id="testList" class="product-list"></div>
+  </div>
+
+  <div class="catalog-section" data-section="Equipo y material médico">
+    <div class="catalog-title"><h3>Equipo y material médico</h3><span>Guantes, termómetros, nebulizadores y más</span></div>
+    <div id="equipmentList" class="product-list"></div>
+  </div>
+
+  <div class="catalog-section" data-section="Diabetes">
+    <div class="catalog-title"><h3>Promociones para diabetes</h3><span>Ofertas especiales</span></div>
+    <div id="diabetesList" class="product-list"></div>
+  </div>
+</section>
   </main>
-  <footer id="contacto"><div><img src="activos/logo-farmacia-panda.svg" alt="Farmacia Panda"><strong>Farmacia Panda</strong><span>Dra. Elsy Alaniz</span></div><div><b>Contacto</b><a href="tel:3316012605">33 1601 2605</a><a href="mailto:elsyalaniz26@gmail.com">elsyalaniz26@gmail.com</a><span>Villa Corona, Jalisco</span></div><div><b>Compra segura</b><span>Precios estimados</span><span>Pago al recibir o transferencia</span><span>Disponibilidad sujeta a confirmación</span></div></footer>
+  <footer id="contacto"><div><img src="activos/logo-farmacia-panda.svg" alt="Farmacia Panda"><strong>Farmacia Panda</strong><span>Dra. Elsy Alaniz</span></div><div><b>Contacto</b><a href="https://wa.me/523316012605" target="_blank">Contactar por WhatsApp</a><a href="mailto:elsyalaniz26@gmail.com">elsyalaniz26@gmail.com</a><span>Villa Corona, Jalisco</span></div><div><b>Compra segura</b><span>Precios estimados</span><span>Pago al recibir o transferencia</span><span>Disponibilidad sujeta a confirmación</span></div></footer>
   <div id="overlay" hidden></div>
   <aside id="drawer" aria-hidden="true"><button id="closeCart" type="button">×</button><h2>Mi carrito</h2><div id="cartItems"></div><div class="total"><span>Subtotal estimado</span><strong id="subtotal">$0.00</strong></div><button id="orderBtn" class="primaria completa" type="button">Realizar pedido</button></aside>
   <div id="checkout" class="modal" hidden><form id="orderForm"><button id="closeCheckout" type="button">×</button><h2>Datos del pedido</h2>

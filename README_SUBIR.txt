@@ -1,14 +1,20 @@
-FARMACIA PANDA — ZIP DEFINITIVO
+FARMACIA PANDA — CORRECCIÓN
 
-1. Suba TODO el contenido de esta carpeta a la raíz del repositorio de GitHub.
-2. No suba ningún archivo .env con claves privadas.
-3. En Render cree un Blueprint usando este mismo repositorio.
-4. En Render agregue:
-   WHATSAPP_TOKEN
-   WHATSAPP_PHONE_NUMBER_ID
-   ADMIN_WHATAPP
-5. Copie la URL que Render genere y colóquela en config.js:
-   apiUrl:"https://SU-SERVIDOR.onrender.com/api/pedidos"
-6. Vuelva a subir config.js.
+CAMBIOS:
+- Se eliminó el número telefónico visible de la página.
+- Se conservaron los botones de WhatsApp.
+- Medicamentos básicos, especiales, oxímetros, pruebas y equipo están separados.
+- Los productos aparecen en listado compacto.
+- Al confirmar un pedido ya no se abre WhatsApp ni se muestran los datos del cliente.
+- Se agregó CNAME para conservar farmaciapanda.com.
 
-Mientras Render no esté conectado, el carrito abre WhatsApp como respaldo.
+SUBIR:
+1. Extraiga este ZIP.
+2. En GitHub borre o reemplace los archivos anteriores.
+3. Suba TODO el contenido de esta carpeta a la raíz.
+4. Confirme los cambios.
+5. Espere de 1 a 5 minutos y actualice farmaciapanda.com.
+
+IMPORTANTE PARA RECIBIR PEDIDOS:
+En config.js debe colocarse la URL real del servidor Render.
+Mientras aparezca TU-SERVIDOR, la página mostrará un aviso y no enviará datos.
